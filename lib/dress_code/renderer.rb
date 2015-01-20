@@ -10,11 +10,11 @@ class DressCode::Renderer < Redcarpet::Render::HTML
       options: { encoding: 'utf-8' }
     })
     inner = if language == 'html'
-      "#{syntax} <div class='code-rendered'>#{code}</div>"
+      "<div class='code-rendered'>#{code}</div><div class='code-syntax'>#{syntax}</div>"
     else
-      syntax
+      "<div class='code-syntax'>#{syntax}</div>"
     end
-    "#{inner}"
+      "<div class='code-rendered'>#{inner}</div>"
   end
 
 end
